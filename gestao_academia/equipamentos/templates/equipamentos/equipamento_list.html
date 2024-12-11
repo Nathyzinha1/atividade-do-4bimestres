@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Equipamentos</title>
+</head>
+<body>
+    <h1>Equipamentos</h1>
+    <a href="{% url 'equipamento_create' %}">Novo Equipamento</a>
+    <ul>
+        {% for equipamento in equipamentos %}
+            <li>
+                <a href="{% url 'equipamento_detail' equipamento.pk %}">{{ equipamento.nome }}</a> - 
+                {{ equipamento.categoria.nome }}
+                <a href="{% url 'equipamento_update' equipamento.pk %}">Editar</a>
+                <a href="{% url 'equipamento_delete' equipamento.pk %}">Excluir</a>
+            </li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'index' %}">Voltar</a> - <a href="{% url 'categoria_list' %}">Categorias</a>
+</body>
+</html>

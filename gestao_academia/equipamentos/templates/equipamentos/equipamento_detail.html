@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Detalhes do Equipamento</title>
+</head>
+<body>
+    <h1>Detalhes do Equipamento</h1>
+    <p><strong>Nome:</strong> {{ equipamento.nome }}</p>
+    <p><strong>Descrição:</strong> {{ equipamento.descricao }}</p>
+    <p><strong>Categoria:</strong> {{ equipamento.categoria.nome }}</p>
+    <a href="{% url 'equipamento_list' %}">Voltar</a>
+</body>
+</html>
